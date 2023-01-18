@@ -5,11 +5,17 @@
 	/// </summary>
 	public class Die
 	{
-
+		/// <summary>
+		/// Creates the die and rolls it to start with a random numver
+		/// </summary>
+		public Die()
+		{
+			Roll();
+		}
 		/// <summary>
 		/// The Current Face up value of the die
 		/// </summary>
-		public byte FaceValue { get; set; }
+		public byte FaceValue { get; private set; }
 		
 		/// <summary>
 		/// True if the die is currently held
@@ -24,7 +30,7 @@
 		public byte Roll()
 		{
 			//Generate random number
-			Random random= new Random();
+			Random random= new();
 			byte newValue = (byte)random.Next(1, 7);
 
 			FaceValue = newValue;
